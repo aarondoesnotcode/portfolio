@@ -3,7 +3,7 @@ import "./Skills.css";
 function Skills() {
   const skills = ["python", "java", "react"];
   return (
-    <section className="skills">
+    <section id="sections" className="skills">
       <h2>SKILLS</h2>
       <ul>
         {skills.map((skill) => (

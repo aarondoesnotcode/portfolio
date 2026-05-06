@@ -6,7 +6,7 @@ function Experience() {
     { id: 2, job: "ethixbase", desc: "12 months at ethixbase" },
   ];
   return (
-    <section className="experience">
+    <section id="experience" className="experience">
       <h2>Experience</h2>
       <ul>
         {myExperience.map(({ id, job, desc }) => (

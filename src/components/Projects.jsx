@@ -14,7 +14,7 @@ function Projects() {
     },
   ];
   return (
-    <section className="projects">
+    <section id="projects" className="projects">
       <h2>PROJECT SECTION</h2>
       <ul>
         {myProjects.map(({ id, title, description }) => (
