@@ -1,21 +1,34 @@
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Hero from "./components/Hero.jsx";
 import About from "./components/About.jsx";
-import Skills from "./components/Skills.jsx";
+import Sidequest from "./components/Sidequest.jsx";
 import Projects from "./components/Projects.jsx";
 import Experience from "./components/Experience.jsx";
 import Navbar from "./components/Navbar.jsx";
 
-function App() {
+function Home() {
   return (
-    <main>
-      <Navbar />
+    <>
       <Hero />
       <About bio="I am a QMUL student" />
-      <Skills />
-      <Projects />
-      <Experience />
-    </main>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <>
+      <Navbar />
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/sidequest" element={<Sidequest />} />
+        </Routes>
+      </main>
+    </>
   );
 }
 

@@ -1,21 +1,39 @@
+import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
   return (
     <nav className="navbar">
-      <strong>Aaron Parwany</strong>
+      <Link to="/" className="navbar-brand">
+        Aaron Parwany
+      </Link>
       <ul>
         <li>
-          <a href="#about">About</a>
+          <a href="/#about">About</a>
         </li>
         <li>
-          <a href="#projects">Projects</a>
+          <NavLink
+            to="/projects"
+            className={({ isActive }) => (isActive ? "is-active" : "")}
+          >
+            Projects
+          </NavLink>
         </li>
         <li>
-          <a href="#experience">Experience</a>
+          <NavLink
+            to="/experience"
+            className={({ isActive }) => (isActive ? "is-active" : "")}
+          >
+            Experience
+          </NavLink>
         </li>
         <li>
-          <a href="#skills">Skills</a>
+          <NavLink
+            to="/sidequest"
+            className={({ isActive }) => (isActive ? "is-active" : "")}
+          >
+            Sidequest
+          </NavLink>
         </li>
       </ul>
     </nav>

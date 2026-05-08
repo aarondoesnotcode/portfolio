@@ -15,11 +15,12 @@ function Projects() {
   ];
   return (
     <section id="projects" className="projects">
-      <h2>PROJECT SECTION</h2>
+      <h2>Projects</h2>
       <ul>
         {myProjects.map(({ id, title, description }) => (
           <li key={id}>
-            {title} - {description}
+            <h3>{title}</h3>
+            <p>{description}</p>
           </li>
         ))}
       </ul>

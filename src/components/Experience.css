@@ -1,3 +1,78 @@
 .experience {
-    color: red;
+    padding: 120px 40px;
+    border-bottom: 1px solid var(--border);
+    max-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.experience h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 2.4rem;
+    margin: 0 0 48px;
+    color: var(--text-h);
+    letter-spacing: -0.8px;
+}
+
+.experience ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.experience li {
+    padding: 32px 0;
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 32px;
+    align-items: baseline;
+    transition: padding-left 0.3s;
+}
+
+.experience li:last-child {
+    border-bottom: 1px solid var(--border);
+}
+
+.experience li:hover {
+    padding-left: 12px;
+}
+
+.experience li h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.45rem;
+    margin: 0;
+    color: var(--text-h);
+    letter-spacing: -0.4px;
+}
+
+.experience li p {
+    margin: 0;
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+@media (max-width: 768px) {
+    .experience {
+        padding: 80px 24px;
+    }
+    .experience h2 {
+        font-size: 2rem;
+        margin-bottom: 32px;
+    }
+    .experience li {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 24px 0;
+    }
+    .experience li h3 {
+        font-size: 1.4rem;
+    }
 }

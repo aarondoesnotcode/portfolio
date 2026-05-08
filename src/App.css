@@ -1,0 +1,10 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    background: var(--bg);
+}
+
+main {
+    text-align: left;
+    background: var(--bg);
+}

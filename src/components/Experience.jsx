@@ -11,7 +11,8 @@ function Experience() {
       <ul>
         {myExperience.map(({ id, job, desc }) => (
           <li key={id}>
-            {job}: {desc}
+            <h3>{job}</h3>
+            <p>{desc}</p>
           </li>
         ))}
       </ul>
