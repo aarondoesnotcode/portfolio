@@ -2,16 +2,20 @@ import "./SplitSection.css";
 
 function SplitSection({
   id,
-  className = "",
+  className,
   image,
   imageAlt = "",
   secondaryImage,
   secondaryAlt = "",
+  /** Extra images stacked below primary / secondary (e.g. project gallery). */
+  moreImages,
   reverse = false,
   hero = false,
   children,
 }) {
-  const stacked = Boolean(secondaryImage);
+  const extraList = Array.isArray(moreImages) ? moreImages : [];
+  const stacked =
+    Boolean(secondaryImage) || extraList.length > 0;
 
   return (
     <section
@@ -43,7 +47,7 @@ function SplitSection({
           />
           <div className="split-section__media-overlay" aria-hidden="true" />
         </div>
-        {stacked ? (
+        {secondaryImage ? (
           <div className="split-section__media-slot">
             <img
               src={secondaryImage}
@@ -55,6 +59,21 @@ function SplitSection({
             <div className="split-section__media-overlay" aria-hidden="true" />
           </div>
         ) : null}
+        {extraList.map((item, index) => (
+          <div
+            key={`extra-${index}`}
+            className="split-section__media-slot"
+          >
+            <img
+              src={item.src}
+              alt={item.alt ?? ""}
+              loading="lazy"
+              decoding="async"
+              className="split-section__img"
+            />
+            <div className="split-section__media-overlay" aria-hidden="true" />
+          </div>
+        ))}
       </div>
       <div className="split-section__content">{children}</div>
     </section>

@@ -69,6 +69,12 @@
     display: block;
 }
 
+/* No white pad — matches dark tile (e.g. logos that already have light artwork). */
+.experience-item__logo--image.experience-item__logo--image-plain {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 0;
+}
+
 .experience-item__body {
     flex: 1 1 auto;
     min-width: 0;
@@ -153,6 +159,44 @@
     opacity: 0.9;
     font-weight: 500;
     margin-right: 4px;
+}
+
+.experience-item__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 8px 14px;
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text-h);
+    border: 1px solid var(--border-strong);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.04);
+    transition:
+        border-color 0.2s,
+        background 0.2s,
+        opacity 0.2s;
+    width: fit-content;
+}
+
+.experience-item__link:hover {
+    border-color: var(--text-h);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.experience-item__link--linkedin:hover {
+    color: #0a66c2;
+    border-color: rgba(10, 102, 194, 0.55);
+}
+
+.experience-item__link--tiktok:hover {
+    color: #fe2c55;
+    border-color: rgba(254, 44, 85, 0.45);
 }
 
 @media (max-width: 768px) {

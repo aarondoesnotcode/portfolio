@@ -52,6 +52,12 @@
     min-height: min(46svh, 480px);
 }
 
+/* Three stacked panels (e.g. projects hero + two gallery shots). */
+.split-section--triple-media .split-section__media--stack .split-section__media-slot {
+    flex: 1 1 33.333%;
+    min-height: min(27svh, 300px);
+}
+
 .split-section__img {
     width: 100%;
     height: 100%;
@@ -116,6 +122,10 @@
     .split-section__media--stack .split-section__media-slot {
         min-height: 26vh;
         flex: 1 1 auto;
+    }
+
+    .split-section--triple-media .split-section__media--stack .split-section__media-slot {
+        min-height: 22vh;
     }
 
     .split-section--hero .split-section__media {

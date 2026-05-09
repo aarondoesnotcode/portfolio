@@ -1,4 +1,5 @@
-import { Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import "./App.css";
 import Hero from "./components/Hero.jsx";
 import About from "./components/About.jsx";
@@ -18,9 +19,26 @@ function Home() {
   );
 }
 
+/** Ensures /#about-style links scroll after client-side navigation. */
+function ScrollToHash() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (!hash) return;
+    const id = decodeURIComponent(hash.slice(1));
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [pathname, hash]);
+
+  return null;
+}
+
 function App() {
   return (
     <>
+      <ScrollToHash />
       <Navbar />
       <main>
         <Routes>
