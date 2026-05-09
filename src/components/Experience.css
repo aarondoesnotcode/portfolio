@@ -1,3 +1,226 @@
 .experience {
-    color: red;
+    width: 100%;
+}
+
+.experience h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 2.4rem;
+    margin: 0 0 24px;
+    color: var(--text-h);
+    letter-spacing: -0.8px;
+}
+
+.experience-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.experience-item {
+    display: flex;
+    gap: 16px;
+    padding: 22px 0;
+    border-top: 1px solid var(--border);
+    transition: padding-left 0.3s;
+}
+
+.experience-item:last-child {
+    border-bottom: 1px solid var(--border);
+}
+
+.experience-item:hover {
+    padding-left: 6px;
+}
+
+.experience-item__logo {
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.experience-item__logo span {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: var(--text-h);
+    line-height: 1;
+}
+
+.experience-item__logo--image {
+    background: #fff;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+.experience-item__logo--image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* No white pad — matches dark tile (e.g. logos that already have light artwork). */
+.experience-item__logo--image.experience-item__logo--image-plain {
+    background: rgba(255, 255, 255, 0.06);
+    padding: 0;
+}
+
+.experience-item__body {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.experience-item__body h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 0 0 4px;
+    color: var(--text-h);
+    letter-spacing: -0.3px;
+    line-height: 1.25;
+}
+
+.experience-item__company {
+    margin: 0 0 2px;
+    color: var(--text-h);
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    opacity: 0.85;
+    line-height: 1.4;
+}
+
+.experience-item__dates {
+    margin: 0 0 12px;
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    opacity: 0.7;
+    line-height: 1.4;
+}
+
+.experience-item__bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.experience-item__bullets li {
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 0.86rem;
+    line-height: 1.5;
+    padding: 0 0 0 14px;
+    position: relative;
+    border: none;
+    transition: none;
+}
+
+.experience-item__bullets li:hover {
+    padding-left: 14px;
+}
+
+.experience-item__bullets li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--text);
+    opacity: 0.55;
+}
+
+.experience-item__bullets li:last-child {
+    border-bottom: none;
+}
+
+.experience-item__tools {
+    margin: 10px 0 0;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--text);
+    opacity: 0.75;
+    line-height: 1.5;
+}
+
+.experience-item__tools span {
+    color: var(--text-h);
+    opacity: 0.9;
+    font-weight: 500;
+    margin-right: 4px;
+}
+
+.experience-item__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    padding: 8px 14px;
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text-h);
+    border: 1px solid var(--border-strong);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.04);
+    transition:
+        border-color 0.2s,
+        background 0.2s,
+        opacity 0.2s;
+    width: fit-content;
+}
+
+.experience-item__link:hover {
+    border-color: var(--text-h);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.experience-item__link--linkedin:hover {
+    color: #0a66c2;
+    border-color: rgba(10, 102, 194, 0.55);
+}
+
+.experience-item__link--tiktok:hover {
+    color: #fe2c55;
+    border-color: rgba(254, 44, 85, 0.45);
+}
+
+@media (max-width: 768px) {
+    .experience h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .experience-item {
+        padding: 18px 0;
+        gap: 12px;
+    }
+
+    .experience-item__logo {
+        flex: 0 0 40px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .experience-item__body h3 {
+        font-size: 1.1rem;
+    }
+
+    .experience-item__bullets li {
+        font-size: 0.82rem;
+    }
 }

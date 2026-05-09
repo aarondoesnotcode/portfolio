@@ -1,0 +1,144 @@
+.split-section {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+    min-height: min(92svh, 960px);
+    border-bottom: 1px solid var(--border);
+    box-sizing: border-box;
+}
+
+.split-section--hero {
+    min-height: 100svh;
+}
+
+.split-section--reverse .split-section__media {
+    order: 2;
+}
+
+.split-section--reverse .split-section__content {
+    order: 1;
+}
+
+.split-section__media {
+    position: relative;
+    flex: 1 1 50%;
+    min-width: 0;
+    min-height: min(92svh, 960px);
+    overflow: hidden;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+}
+
+.split-section--hero .split-section__media {
+    min-height: 100svh;
+}
+
+.split-section__media-slot {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.split-section__media--stack .split-section__media-slot {
+    flex: 1 1 50%;
+    min-height: min(46svh, 480px);
+}
+
+/* Three stacked panels (e.g. projects hero + two gallery shots). */
+.split-section--triple-media .split-section__media--stack .split-section__media-slot {
+    flex: 1 1 33.333%;
+    min-height: min(27svh, 300px);
+}
+
+.split-section__img {
+    width: 100%;
+    height: 100%;
+    /* contain = never upscale past native pixels → stays sharp on tall panels.
+       Letterboxing is intentional (bars match --bg). */
+    object-fit: contain;
+    object-position: center center;
+    filter: contrast(1.03) saturate(1.05);
+    image-rendering: auto;
+    display: block;
+}
+
+.split-section__media-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+        180deg,
+        rgba(20, 21, 28, 0.12) 0%,
+        rgba(20, 21, 28, 0.05) 50%,
+        rgba(20, 21, 28, 0.22) 100%
+    );
+}
+
+.split-section__content {
+    flex: 1 1 50%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 72px 48px;
+    box-sizing: border-box;
+    background: var(--bg);
+}
+
+.split-section--hero .split-section__content {
+    position: relative;
+    min-height: 100svh;
+    padding: 120px 48px 100px;
+}
+
+@media (max-width: 900px) {
+    .split-section {
+        flex-direction: column;
+        min-height: unset;
+    }
+
+    .split-section--reverse .split-section__media,
+    .split-section--reverse .split-section__content {
+        order: unset;
+    }
+
+    .split-section__media {
+        min-height: 52vh;
+        flex: none;
+    }
+
+    .split-section__media--stack {
+        min-height: auto;
+    }
+
+    .split-section__media--stack .split-section__media-slot {
+        min-height: 26vh;
+        flex: 1 1 auto;
+    }
+
+    .split-section--triple-media .split-section__media--stack .split-section__media-slot {
+        min-height: 22vh;
+    }
+
+    .split-section--hero .split-section__media {
+        min-height: 45vh;
+    }
+
+    .split-section__content {
+        flex: none;
+        padding: 56px 28px;
+    }
+
+    .split-section--hero .split-section__content {
+        min-height: unset;
+        padding: 56px 28px 72px;
+    }
+}
