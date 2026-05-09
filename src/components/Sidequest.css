@@ -9,7 +9,7 @@
     justify-content: center;
     overflow: hidden;
     isolation: isolate;
-    background: #050608;
+    background: var(--bg);
     border-bottom: 1px solid var(--border);
 }
 
@@ -34,9 +34,9 @@
     inset: 0;
     background: linear-gradient(
         180deg,
-        rgba(5, 6, 8, 0.4) 0%,
-        rgba(5, 6, 8, 0.15) 40%,
-        rgba(5, 6, 8, 0.85) 100%
+        rgba(31, 33, 40, 0.35) 0%,
+        rgba(31, 33, 40, 0.1) 40%,
+        rgba(31, 33, 40, 0.8) 100%
     );
     z-index: -1;
     pointer-events: none;

@@ -1,3 +1,5 @@
+import projectsImage from "../assets/projects-bg.jpeg";
+import SplitSection from "./SplitSection.jsx";
 import "./Projects.css";
 
 function Projects() {
@@ -14,17 +16,19 @@ function Projects() {
     },
   ];
   return (
-    <section id="projects" className="projects">
-      <h2>Projects</h2>
-      <ul>
-        {myProjects.map(({ id, title, description }) => (
-          <li key={id}>
-            <h3>{title}</h3>
-            <p>{description}</p>
-          </li>
-        ))}
-      </ul>
-    </section>
+    <SplitSection id="projects" image={projectsImage} reverse>
+      <div className="projects">
+        <h2>Projects</h2>
+        <ul>
+          {myProjects.map(({ id, title, description }) => (
+            <li key={id}>
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </SplitSection>
   );
 }
 

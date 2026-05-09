@@ -1,9 +1,4 @@
 .experience {
-    padding: 120px 40px;
-    border-bottom: 1px solid var(--border);
-    max-width: 1100px;
-    margin: 0 auto;
-    box-sizing: border-box;
     width: 100%;
 }
 
@@ -11,12 +6,12 @@
     font-family: var(--serif);
     font-weight: 500;
     font-size: 2.4rem;
-    margin: 0 0 48px;
+    margin: 0 0 24px;
     color: var(--text-h);
     letter-spacing: -0.8px;
 }
 
-.experience ul {
+.experience-list {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -24,55 +19,164 @@
     flex-direction: column;
 }
 
-.experience li {
-    padding: 32px 0;
+.experience-item {
+    display: flex;
+    gap: 16px;
+    padding: 22px 0;
     border-top: 1px solid var(--border);
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 32px;
-    align-items: baseline;
     transition: padding-left 0.3s;
 }
 
-.experience li:last-child {
+.experience-item:last-child {
     border-bottom: 1px solid var(--border);
 }
 
-.experience li:hover {
-    padding-left: 12px;
+.experience-item:hover {
+    padding-left: 6px;
 }
 
-.experience li h3 {
+.experience-item__logo {
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.experience-item__logo span {
     font-family: var(--serif);
     font-weight: 500;
-    font-size: 1.45rem;
-    margin: 0;
+    font-size: 1.3rem;
     color: var(--text-h);
-    letter-spacing: -0.4px;
+    line-height: 1;
 }
 
-.experience li p {
-    margin: 0;
+.experience-item__logo--image {
+    background: #fff;
+    padding: 4px;
+    box-sizing: border-box;
+}
+
+.experience-item__logo--image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.experience-item__body {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.experience-item__body h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 0 0 4px;
+    color: var(--text-h);
+    letter-spacing: -0.3px;
+    line-height: 1.25;
+}
+
+.experience-item__company {
+    margin: 0 0 2px;
+    color: var(--text-h);
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    opacity: 0.85;
+    line-height: 1.4;
+}
+
+.experience-item__dates {
+    margin: 0 0 12px;
     color: var(--text);
     font-family: var(--sans);
-    font-size: 0.95rem;
-    line-height: 1.55;
+    font-size: 0.78rem;
+    opacity: 0.7;
+    line-height: 1.4;
+}
+
+.experience-item__bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.experience-item__bullets li {
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 0.86rem;
+    line-height: 1.5;
+    padding: 0 0 0 14px;
+    position: relative;
+    border: none;
+    transition: none;
+}
+
+.experience-item__bullets li:hover {
+    padding-left: 14px;
+}
+
+.experience-item__bullets li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--text);
+    opacity: 0.55;
+}
+
+.experience-item__bullets li:last-child {
+    border-bottom: none;
+}
+
+.experience-item__tools {
+    margin: 10px 0 0;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--text);
+    opacity: 0.75;
+    line-height: 1.5;
+}
+
+.experience-item__tools span {
+    color: var(--text-h);
+    opacity: 0.9;
+    font-weight: 500;
+    margin-right: 4px;
 }
 
 @media (max-width: 768px) {
-    .experience {
-        padding: 80px 24px;
-    }
     .experience h2 {
         font-size: 2rem;
-        margin-bottom: 32px;
+        margin-bottom: 20px;
     }
-    .experience li {
-        grid-template-columns: 1fr;
-        gap: 8px;
-        padding: 24px 0;
+
+    .experience-item {
+        padding: 18px 0;
+        gap: 12px;
     }
-    .experience li h3 {
-        font-size: 1.4rem;
+
+    .experience-item__logo {
+        flex: 0 0 40px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .experience-item__body h3 {
+        font-size: 1.1rem;
+    }
+
+    .experience-item__bullets li {
+        font-size: 0.82rem;
     }
 }

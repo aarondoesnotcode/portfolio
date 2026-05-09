@@ -2,9 +2,9 @@ import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import Hero from "./components/Hero.jsx";
 import About from "./components/About.jsx";
-import Sidequest from "./components/Sidequest.jsx";
 import Projects from "./components/Projects.jsx";
 import Experience from "./components/Experience.jsx";
+import Sidequest from "./components/Sidequest.jsx";
 import Navbar from "./components/Navbar.jsx";
 
 function Home() {
@@ -12,6 +12,8 @@ function Home() {
     <>
       <Hero />
       <About bio="I am a QMUL student" />
+      <Experience />
+      <Projects />
     </>
   );
 }
@@ -23,8 +25,6 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/experience" element={<Experience />} />
           <Route path="/sidequest" element={<Sidequest />} />
         </Routes>
       </main>

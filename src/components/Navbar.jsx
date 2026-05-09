@@ -9,30 +9,11 @@ function Navbar() {
       </Link>
       <ul>
         <li>
-          <a href="/#about">About</a>
-        </li>
-        <li>
-          <NavLink
-            to="/projects"
-            className={({ isActive }) => (isActive ? "is-active" : "")}
-          >
-            Projects
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/experience"
-            className={({ isActive }) => (isActive ? "is-active" : "")}
-          >
-            Experience
-          </NavLink>
-        </li>
-        <li>
           <NavLink
             to="/sidequest"
             className={({ isActive }) => (isActive ? "is-active" : "")}
           >
-            Sidequest
+            Sidequestmaxx
           </NavLink>
         </li>
       </ul>

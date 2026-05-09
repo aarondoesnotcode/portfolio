@@ -1,9 +1,11 @@
+import bgImage from "../assets/hero-bg.jpeg";
+import SplitSection from "./SplitSection.jsx";
 import "./Hero.css";
 
 function Hero() {
   return (
-    <header className="hero" id="top">
-      <div className="hero-content">
+    <SplitSection id="top" image={bgImage} hero>
+      <div className="hero-inner">
         <h1 className="hero-name">Aaron Parwany</h1>
         <p className="hero-subtitle">Software Engineer</p>
         <div className="hero-socials">
@@ -57,7 +59,6 @@ function Hero() {
           </a>
         </div>
       </div>
-
       <a href="#about" className="hero-scroll" aria-label="Scroll down">
         <svg
           width="14"
@@ -75,7 +76,7 @@ function Hero() {
           />
         </svg>
       </a>
-    </header>
+    </SplitSection>
   );
 }
 
