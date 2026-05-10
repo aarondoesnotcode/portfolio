@@ -199,6 +199,42 @@
     border-color: rgba(254, 44, 85, 0.45);
 }
 
+.split-section--compact .experience h2 {
+    font-size: 2.15rem;
+    margin-bottom: 22px;
+}
+
+.split-section--compact .experience-item {
+    padding: 19px 0;
+    gap: 15px;
+}
+
+.split-section--compact .experience-item__dates {
+    margin-bottom: 11px;
+}
+
+.split-section--compact .experience-item__body h3 {
+    font-size: 1.12rem;
+}
+
+.split-section--compact .experience-item__bullets {
+    gap: 6px;
+}
+
+.split-section--compact .experience-item__bullets li {
+    font-size: 0.84rem;
+    line-height: 1.5;
+}
+
+.split-section--compact .experience-item__tools {
+    margin-top: 10px;
+}
+
+.split-section--compact .experience-item__link {
+    margin-top: 12px;
+    padding: 8px 13px;
+}
+
 @media (max-width: 768px) {
     .experience h2 {
         font-size: 2rem;
@@ -222,5 +258,14 @@
 
     .experience-item__bullets li {
         font-size: 0.82rem;
+    }
+
+    .split-section--compact .experience h2 {
+        font-size: 1.9rem;
+        margin-bottom: 18px;
+    }
+
+    .split-section--compact .experience-item {
+        padding: 17px 0;
     }
 }

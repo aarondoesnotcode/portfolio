@@ -147,6 +147,7 @@ function Experience() {
   return (
     <SplitSection
       id="experience"
+      className="split-section--compact"
       image={experienceImage}
       imageAlt=""
       secondaryImage={hackathonPhoto}
