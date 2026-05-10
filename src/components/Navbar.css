@@ -84,8 +84,17 @@
     opacity: 1;
 }
 
+/* Prominent CTA — distinct from section nav links. */
+.navbar-center .navbar-sidequest {
+    font-weight: 600;
+    font-size: 0.84rem;
+    letter-spacing: 0.22em;
+    opacity: 0.92;
+}
+
 .navbar-center .navbar-sidequest.is-active {
     opacity: 1;
+    font-weight: 700;
 }
 
 @media (max-width: 768px) {
@@ -122,5 +131,10 @@
     .navbar-section-link {
         font-size: 0.68rem;
         letter-spacing: 1.5px;
+    }
+
+    .navbar-center .navbar-sidequest {
+        font-size: 0.74rem;
+        letter-spacing: 0.18em;
     }
 }

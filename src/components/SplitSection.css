@@ -12,6 +12,23 @@
     min-height: 100svh;
 }
 
+/* Shorter split sections (e.g. Experience): less viewport fill, tighter media stack. */
+.split-section--compact {
+    min-height: min(80svh, 820px);
+}
+
+.split-section--compact .split-section__media {
+    min-height: min(80svh, 820px);
+}
+
+.split-section--compact .split-section__media--stack .split-section__media-slot {
+    min-height: min(40svh, 410px);
+}
+
+.split-section--compact .split-section__content {
+    padding: 60px 44px;
+}
+
 .split-section--reverse .split-section__media {
     order: 2;
 }
@@ -124,6 +141,10 @@
         flex: 1 1 auto;
     }
 
+    .split-section--compact .split-section__media--stack .split-section__media-slot {
+        min-height: 24vh;
+    }
+
     .split-section--triple-media .split-section__media--stack .split-section__media-slot {
         min-height: 22vh;
     }
@@ -135,6 +156,10 @@
     .split-section__content {
         flex: none;
         padding: 56px 28px;
+    }
+
+    .split-section--compact .split-section__content {
+        padding: 50px 26px;
     }
 
     .split-section--hero .split-section__content {
