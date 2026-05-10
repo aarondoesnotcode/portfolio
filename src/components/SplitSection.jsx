@@ -11,11 +11,19 @@ function SplitSection({
   moreImages,
   reverse = false,
   hero = false,
+  /** "contain" (default) keeps sharpness with letterboxing; "cover" fills the panel. */
+  imageFit = "contain",
   children,
 }) {
   const extraList = Array.isArray(moreImages) ? moreImages : [];
   const stacked =
     Boolean(secondaryImage) || extraList.length > 0;
+  const imgClassName = [
+    "split-section__img",
+    imageFit === "cover" ? "split-section__img--cover" : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <section
@@ -43,7 +51,7 @@ function SplitSection({
             alt={imageAlt}
             loading={hero ? "eager" : "lazy"}
             decoding="async"
-            className="split-section__img"
+            className={imgClassName}
           />
           <div className="split-section__media-overlay" aria-hidden="true" />
         </div>
@@ -54,7 +62,7 @@ function SplitSection({
               alt={secondaryAlt}
               loading="lazy"
               decoding="async"
-              className="split-section__img"
+              className={imgClassName}
             />
             <div className="split-section__media-overlay" aria-hidden="true" />
           </div>
@@ -69,7 +77,7 @@ function SplitSection({
               alt={item.alt ?? ""}
               loading="lazy"
               decoding="async"
-              className="split-section__img"
+              className={imgClassName}
             />
             <div className="split-section__media-overlay" aria-hidden="true" />
           </div>

@@ -1,10 +1,7 @@
-import experienceImage from "../assets/experience-bg.jpeg";
-import hackathonPhoto from "../assets/experience-hackathon.jpeg";
 import ethixbaseLogo from "../assets/logos/ethixbase.png";
 import infosysLogo from "../assets/logos/infosys.png";
 import azeekLogo from "../assets/logos/azeek.png";
 import sidequestLogo from "../assets/logos/sidequestmaxx.png";
-import SplitSection from "./SplitSection.jsx";
 import "./Experience.css";
 
 function ExperienceOutboundLink({ href, platform }) {
@@ -70,9 +67,6 @@ function ExperienceLogo({ company, logo, logoPlain }) {
 }
 
 function Experience() {
-  // To use real logos: drop a PNG into src/assets/logos/ then
-  //   import infosysLogo from "../assets/logos/infosys.png"
-  // and set `logo: infosysLogo` on the matching entry.
   const experiences = [
     {
       id: 1,
@@ -145,16 +139,9 @@ function Experience() {
   ];
 
   return (
-    <SplitSection
-      id="experience"
-      className="split-section--compact"
-      image={experienceImage}
-      imageAlt=""
-      secondaryImage={hackathonPhoto}
-      secondaryAlt="Infosys–Google AI Hackathon — team with certificates, London"
-    >
-      <div className="experience">
-        <h2>Experience</h2>
+    <section id="experience" className="experience-section">
+      <div className="experience-section__inner">
+        <h2 className="experience-section__title">Experience</h2>
         <ul className="experience-list">
           {experiences.map(
             ({
@@ -171,40 +158,42 @@ function Experience() {
               linkPlatform,
             }) => (
               <li key={id} className="experience-item">
-                <ExperienceLogo
-                  company={company}
-                  logo={logo}
-                  logoPlain={logoPlain}
-                />
-                <div className="experience-item__body">
-                  <h3>{role}</h3>
-                  <p className="experience-item__company">
-                    {company} · {type}
-                  </p>
-                  <p className="experience-item__dates">{dates}</p>
-                  <ul className="experience-item__bullets">
-                    {bullets.map((bullet) => (
-                      <li key={bullet}>{bullet}</li>
-                    ))}
-                  </ul>
-                  {tools ? (
-                    <p className="experience-item__tools">
-                      <span>Tools:</span> {tools}
+                <div className="experience-item__main">
+                  <ExperienceLogo
+                    company={company}
+                    logo={logo}
+                    logoPlain={logoPlain}
+                  />
+                  <div className="experience-item__body">
+                    <h3>{role}</h3>
+                    <p className="experience-item__company">
+                      {company} · {type}
                     </p>
-                  ) : null}
-                  {linkUrl && linkPlatform ? (
-                    <ExperienceOutboundLink
-                      href={linkUrl}
-                      platform={linkPlatform}
-                    />
-                  ) : null}
+                    <p className="experience-item__dates">{dates}</p>
+                    <ul className="experience-item__bullets">
+                      {bullets.map((bullet) => (
+                        <li key={bullet}>{bullet}</li>
+                      ))}
+                    </ul>
+                    {tools ? (
+                      <p className="experience-item__tools">
+                        <span>Tools:</span> {tools}
+                      </p>
+                    ) : null}
+                    {linkUrl && linkPlatform ? (
+                      <ExperienceOutboundLink
+                        href={linkUrl}
+                        platform={linkPlatform}
+                      />
+                    ) : null}
+                  </div>
                 </div>
               </li>
             ),
           )}
         </ul>
       </div>
-    </SplitSection>
+    </section>
   );
 }
 

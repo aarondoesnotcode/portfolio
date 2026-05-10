@@ -4,7 +4,7 @@ import "./Hero.css";
 
 function Hero() {
   return (
-    <SplitSection id="top" image={bgImage} hero>
+    <SplitSection id="top" image={bgImage} imageAlt="" hero imageFit="cover">
       <div className="hero-inner">
         <h1 className="hero-name">Aaron Parwany</h1>
         <p className="hero-subtitle">Software Engineer</p>

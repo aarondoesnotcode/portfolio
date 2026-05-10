@@ -1,7 +1,13 @@
-import projectsImage from "../assets/projects-bg.jpeg";
+import projectsBg from "../assets/projects-bg.jpeg";
 import projectsExtra1 from "../assets/projects-extra-1.jpeg";
 import projectsExtra2 from "../assets/projects-extra-2.jpeg";
-import SplitSection from "./SplitSection.jsx";
+import infosysBronzePhoto from "../assets/experience-hackathon.jpeg";
+import projectMortgageAdvisor from "../assets/project-mortgage-advisor.png";
+import projectLogisticRegression from "../assets/project-logistic-regression.png";
+import projectPaycept from "../assets/project-paycept.png";
+import projectDisasterIo from "../assets/project-disaster-io.png";
+import projectDocExplain from "../assets/project-docexplain.png";
+import projectCareCommit from "../assets/project-carecommit.png";
 import "./Projects.css";
 
 function ProjectLinks({ linkedin, github, website }) {
@@ -93,6 +99,38 @@ function ProjectLinks({ linkedin, github, website }) {
   );
 }
 
+function ProjectCardCover({ project }) {
+  if (project.image) {
+    return (
+      <div className="projects-card__cover projects-card__cover--photo">
+        <img
+          src={project.image}
+          alt={project.imageAlt ?? ""}
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    );
+  }
+
+  const initials = project.title
+    .split(/\s+/)
+    .map((word) => word[0])
+    .filter(Boolean)
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
+
+  return (
+    <div
+      className={`projects-card__cover projects-card__cover--gradient projects-card__cover--${project.gradient ?? "slate"}`}
+      aria-hidden="true"
+    >
+      <span className="projects-card__cover-mark">{initials}</span>
+    </div>
+  );
+}
+
 function Projects() {
   const projects = [
     {
@@ -103,6 +141,9 @@ function Projects() {
         "Python, Streamlit, GCP, FastAPI, CrewAI, Pandas, Scikit-learn, NumPy, Joblib",
       summary:
         "Secured 3rd place out of 15+ teams by leading a team of 3 to build an AI-enabled mortgage advisor prototype. Deployed a credit risk assessment ML model leveraging real-world financial data to predict default likelihood. Automated underwriting workflows using AI agents, delivering preliminary insights within 5 minutes. Designed an interactive Streamlit interface to present real-time mortgage insights.",
+      image: projectMortgageAdvisor,
+      imageAlt:
+        "Virtual Mortgage Advisor app welcome screen with Start Application button",
       links: {
         linkedin:
           "https://www.linkedin.com/posts/aaron-parwany_thrilled-to-announce-that-my-intern-only-activity-7348362926509936642-USAa",
@@ -114,6 +155,9 @@ function Projects() {
       subtitle: "Side project",
       summary:
         "A machine learning model, trained and tested on data to predict whether a user has heart disease or not.",
+      image: projectLogisticRegression,
+      imageAlt:
+        "Terminal output with confusion matrix, classification report, accuracy, ROC-AUC, and F1 score",
       links: {
         github: "https://github.com/aarondoesnotcode/logistic-regression-model",
       },
@@ -124,6 +168,9 @@ function Projects() {
       subtitle: "Global AI Hacktour Hackathon",
       summary:
         "An application that allows users to upload UK documents, uses OCR to extract and understand the content, and then breaks everything down into clear, simple explanations. It also highlights key actions and deadlines, and helps generate appeal letters with the right links and guidance.",
+      image: projectDocExplain,
+      imageAlt:
+        "DocExplain landing page with headline and document upload area",
       links: {
         linkedin:
           "https://www.linkedin.com/feed/update/urn:li:activity:7453034953857994752/",
@@ -137,6 +184,9 @@ function Projects() {
       subtitle: "Cursor x Briefcase hackathon",
       summary:
         "A financial agent designed to process invoices before payment. It intercepts incoming invoices, runs multiple guard layers to detect suspicious activity, and determines when automation is safe versus when human approval is necessary.",
+      image: projectPaycept,
+      imageAlt:
+        "Paycept landing page showing autonomous AP agent and invoice workflow",
       links: {
         linkedin:
           "https://www.linkedin.com/feed/update/urn:li:activity:7457383683533008896/",
@@ -149,6 +199,9 @@ function Projects() {
       subtitle: "MongoDB Agentic Evolution Hackathon",
       summary:
         "During crises like floods, storms, power outages, responders need to make rapid decisions with incomplete and changing information. Our system uses specialised AI agents to assess incoming requests, track available resources, prioritise urgent cases, plan routes and continuously adapt when conditions change.",
+      image: projectDisasterIo,
+      imageAlt:
+        "Disaster.io landing page with scenario selection for emergency response",
       links: {
         linkedin:
           "https://www.linkedin.com/posts/aaron-parwany_another-two-hackathons-last-week-two-more-activity-7457383683533008896-clWg",
@@ -161,6 +214,9 @@ function Projects() {
       subtitle: "Cursor x Whitecircle hackathon",
       summary:
         "An AI code review tool that analyses real GitHub commits, surfaces bugs, highlights security risks and suggests actionable fixes. To top it off, we integrated WhiteCircle as a guardrail layer to keep reviews compliant and safe.",
+      image: projectCareCommit,
+      imageAlt:
+        "CareCommit landing page for AI-powered GitHub commit review",
       links: {
         linkedin:
           "https://www.linkedin.com/posts/aaron-parwany_last-week-i-jumped-back-into-the-hackathon-activity-7448278762527444992-Q9r_",
@@ -169,57 +225,77 @@ function Projects() {
     },
   ];
 
-  const galleryImages = [
+  const gallery = [
     {
-      src: projectsExtra1,
-      alt: "Developers at a hackathon working on laptops in a collaborative space",
+      src: infosysBronzePhoto,
+      alt: "Team holding bronze certificates after placing 3rd at the Infosys × Google AI Hackathon, London",
+      caption: "Infosys × Google AI Hackathon · Infosys Technologies",
+    },
+    {
+      src: projectsBg,
+      alt: "Hackathon team presenting their project to judges",
+      caption: "Global AI Hacktour · UCL",
     },
     {
       src: projectsExtra2,
-      alt: "Hackathon workshop with developers collaborating in a tech event space",
+      alt: "Participants gathered around a demo screen at halkin offices",
+      caption: "Cursor x Briefcase · Halkin Offices",
+    },
+    {
+      src: projectsExtra1,
+      alt: "Developers working on laptops during the Cursor × White Circle hackathon at the Halkin offices",
+      caption: "Cursor × White Circle · Halkin Offices",
     },
   ];
 
   return (
-    <SplitSection
-      id="projects"
-      className="split-section--triple-media"
-      image={projectsImage}
-      imageAlt="Hackathon and project work"
-      moreImages={galleryImages}
-      reverse
-    >
-      <div className="projects">
-        <h2>Projects</h2>
-        <ul className="projects-list">
-          {projects.map(
-            ({ id, title, subtitle, tools, bullets, summary, links }) => (
-              <li key={id} className="projects-card">
-                <h3>{title}</h3>
-                {subtitle ? (
-                  <p className="projects-card__subtitle">{subtitle}</p>
-                ) : null}
-                {tools ? (
-                  <p className="projects-card__tools">
-                    <span>Stack:</span> {tools}
-                  </p>
-                ) : null}
-                {bullets?.length ? (
-                  <ul className="projects-card__bullets">
-                    {bullets.map((line) => (
-                      <li key={line}>{line}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="projects-card__summary">{summary}</p>
-                )}
-                {links ? <ProjectLinks {...links} /> : null}
+    <section id="projects" className="projects-section">
+      <div className="projects-section__inner">
+        <h2 className="projects-section__title">Projects</h2>
+        <div className="projects-section__layout">
+          <ul className="projects-grid">
+            {projects.map((project) => (
+              <li key={project.id} className="projects-card">
+                <ProjectCardCover project={project} />
+                <div className="projects-card__body">
+                  <h3>{project.title}</h3>
+                  {project.subtitle ? (
+                    <p className="projects-card__subtitle">
+                      {project.subtitle}
+                    </p>
+                  ) : null}
+                  {project.tools ? (
+                    <p className="projects-card__tools">
+                      <span>Stack:</span> {project.tools}
+                    </p>
+                  ) : null}
+                  <p className="projects-card__summary">{project.summary}</p>
+                  {project.links ? <ProjectLinks {...project.links} /> : null}
+                </div>
               </li>
-            ),
-          )}
-        </ul>
+            ))}
+          </ul>
+          <aside className="projects-gallery" aria-label="Hackathon scenes">
+            <p className="projects-gallery__label">Highlights</p>
+            <ul className="projects-gallery__list">
+              {gallery.map((photo) => (
+                <li key={photo.src} className="projects-gallery__item">
+                  <figure>
+                    <img
+                      src={photo.src}
+                      alt={photo.alt}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <figcaption>{photo.caption}</figcaption>
+                  </figure>
+                </li>
+              ))}
+            </ul>
+          </aside>
+        </div>
       </div>
-    </SplitSection>
+    </section>
   );
 }
 
