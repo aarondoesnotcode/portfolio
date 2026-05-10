@@ -60,6 +60,24 @@
     align-items: flex-start;
 }
 
+.sidequest-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 14px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(240, 100, 100, 0.45);
+    border-radius: 999px;
+    color: var(--text-h);
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
 .sidequest h2 {
     font-family: var(--serif);
     font-weight: 500;
@@ -135,193 +153,26 @@
     letter-spacing: 0.03em;
 }
 
-/* ---------------------------------------------------------------------------
- * London map demo
- * ------------------------------------------------------------------------- */
-
-.sidequest-map {
-    position: relative;
-    width: 100%;
-    padding: 22px 22px 18px;
-    background: rgba(15, 18, 25, 0.6);
+.sidequest-preview {
+    margin: 0;
+    padding: 18px;
+    background: rgba(15, 18, 25, 0.55);
     border: 1px solid var(--border-strong);
-    border-radius: 8px;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     box-sizing: border-box;
+    box-shadow:
+        0 24px 48px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset;
 }
 
-.sidequest-map__heading {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 18px;
-    margin: 0 4px 14px;
-    color: var(--text-h);
-}
-
-.sidequest-map__title {
-    font-family: var(--sans);
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    opacity: 0.85;
-}
-
-.sidequest-map__caption {
-    font-family: var(--sans);
-    font-size: 0.72rem;
-    letter-spacing: 0.04em;
-    opacity: 0.55;
-}
-
-.sidequest-map__svg {
+.sidequest-preview__img {
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 6px;
-    overflow: visible;
-}
-
-.sq-map__background {
-    fill: rgba(14, 16, 22, 0.97);
-}
-
-.sq-map__thames {
-    fill: none;
-    stroke: rgba(118, 125, 140, 0.55);
-    stroke-width: 28;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-.sq-map__thames-edge {
-    fill: none;
-    stroke: rgba(170, 180, 195, 0.16);
-    stroke-width: 30;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-/* Neighbourhood labels — three sizes, all sans-serif, white-ish at varied opacity. */
-.sq-map__place {
-    fill: var(--text-h);
-    font-family: var(--sans);
-    paint-order: stroke;
-    stroke: rgba(0, 0, 0, 0.78);
-    stroke-width: 3px;
-    stroke-linejoin: round;
-}
-
-.sq-map__place--xl {
-    font-size: 50px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    opacity: 0.92;
-    stroke-width: 5px;
-}
-
-.sq-map__place--lg {
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    opacity: 0.78;
-}
-
-.sq-map__place--md {
-    font-size: 17px;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    opacity: 0.7;
-}
-
-.sq-map__place--sm {
-    font-size: 13px;
-    font-weight: 400;
-    letter-spacing: 0.03em;
-    opacity: 0.55;
-}
-
-.sq-map__compass circle {
-    fill: rgba(0, 0, 0, 0.55);
-    stroke: rgba(255, 255, 255, 0.4);
-    stroke-width: 1;
-}
-
-.sq-map__compass path {
-    fill: rgba(255, 255, 255, 0.85);
-}
-
-.sq-map__compass text {
-    fill: var(--text-h);
-    font-family: var(--sans);
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    opacity: 0.75;
-}
-
-.sq-map__marker {
-    cursor: default;
-    outline: none;
-    transition: transform 0.2s ease;
-    transform-box: fill-box;
-    transform-origin: center;
-}
-
-.sq-map__marker-halo {
-    fill: rgba(255, 255, 255, 0);
-    transition: fill 0.2s ease;
-}
-
-.sq-map__marker-disc {
-    fill: rgba(15, 18, 25, 0.95);
-    stroke: #f06464;
-    stroke-width: 1.8;
-    transition:
-        fill 0.2s ease,
-        stroke 0.2s ease,
-        stroke-width 0.2s ease;
-}
-
-.sq-map__marker-icon {
-    fill: none;
-    stroke: var(--text-h);
-    stroke-width: 1.7;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    pointer-events: none;
-}
-
-.sq-map__marker:hover .sq-map__marker-halo,
-.sq-map__marker:focus-visible .sq-map__marker-halo {
-    fill: rgba(255, 255, 255, 0.1);
-}
-
-.sq-map__marker:hover .sq-map__marker-disc,
-.sq-map__marker:focus-visible .sq-map__marker-disc {
-    fill: #f06464;
-    stroke: #f06464;
-    stroke-width: 2;
-}
-
-.sq-map__marker:hover .sq-map__marker-icon,
-.sq-map__marker:focus-visible .sq-map__marker-icon {
-    stroke: #14151c;
-}
-
-.sq-map__marker-label {
-    pointer-events: none;
-    fill: var(--text-h);
-    font-family: var(--sans);
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    paint-order: stroke;
-    stroke: rgba(0, 0, 0, 0.9);
-    stroke-width: 3.5px;
-    stroke-linejoin: round;
+    border-radius: 8px;
+    vertical-align: middle;
 }
 
 @media (max-width: 960px) {
@@ -348,13 +199,7 @@
     .sidequest-tagline {
         font-size: 1.15rem;
     }
-    .sidequest-map {
-        padding: 16px 14px 14px;
-    }
-    .sidequest-map__heading {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 4px;
-        margin-bottom: 10px;
+    .sidequest-preview {
+        padding: 14px;
     }
 }

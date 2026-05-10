@@ -1,5 +1,5 @@
 import bgImage from "../assets/sidequest-bg.jpeg";
-import SidequestMap from "./SidequestMap.jsx";
+import appMockup from "../assets/sidequest-app-mockup.jpg";
 import "./Sidequest.css";
 
 function Sidequest() {
@@ -16,6 +16,9 @@ function Sidequest() {
       <div className="sidequest-overlay" aria-hidden="true" />
       <div className="sidequest-inner">
         <div className="sidequest-intro">
+          <span className="sidequest-status" aria-label="App in development, coming soon">
+            App in development · Coming soon
+          </span>
           <h2>Sidequestmaxx</h2>
           <p className="sidequest-tagline">
             Sidequests for a more fulfilled London
@@ -47,7 +50,17 @@ function Sidequest() {
             </a>
           </div>
         </div>
-        <SidequestMap />
+        <figure className="sidequest-preview">
+          <img
+            src={appMockup}
+            alt="Sidequestmaxx app mockup: map of London with activity pins, search, filters, and event cards"
+            className="sidequest-preview__img"
+            width={1024}
+            height={746}
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
       </div>
     </section>
   );
