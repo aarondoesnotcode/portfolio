@@ -7,7 +7,7 @@ function Hero() {
     <SplitSection id="top" image={bgImage} imageAlt="" hero imageFit="cover">
       <div className="hero-inner">
         <h1 className="hero-name">Aaron Parwany</h1>
-        <p className="hero-subtitle">Software Engineer</p>
+        <p className="hero-subtitle">Software Engineer. CS Student.</p>
         <div className="hero-socials">
           <a
             href="https://www.linkedin.com/in/aaron-parwany-29abb12a4/"

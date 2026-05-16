@@ -9,27 +9,27 @@ import Sidequest from "./components/Sidequest.jsx";
 import Navbar from "./components/Navbar.jsx";
 
 function Home() {
-  return (
-    <>
-      <Hero />
-      <About bio="I am a QMUL student" />
-      <Experience />
-      <Projects />
-    </>
-  );
+  return <Hero />;
 }
 
-/** Ensures /#about-style links scroll after client-side navigation. */
-function ScrollToHash() {
+/**
+ * Scroll behaviour on client navigation:
+ *  - If the URL has a hash, scroll to that element (smooth).
+ *  - Otherwise, reset to the top of the page on every route change.
+ */
+function ScrollManager() {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    if (!hash) return;
-    const id = decodeURIComponent(hash.slice(1));
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (hash) {
+      const id = decodeURIComponent(hash.slice(1));
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        return;
+      }
     }
+    window.scrollTo(0, 0);
   }, [pathname, hash]);
 
   return null;
@@ -38,11 +38,17 @@ function ScrollToHash() {
 function App() {
   return (
     <>
-      <ScrollToHash />
+      <ScrollManager />
       <Navbar />
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route
+            path="/about"
+            element={<About bio="I am a QMUL student" />}
+          />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/sidequest" element={<Sidequest />} />
         </Routes>
       </main>

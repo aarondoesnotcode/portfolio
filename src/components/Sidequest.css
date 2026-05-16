@@ -1,4 +1,12 @@
 .sidequest {
+    /* The page sits over a dark photo — keep dark surface colours locally
+       so it stays readable in either light or dark mode. */
+    --bg: #0d0d0d;
+    --text: rgba(235, 235, 235, 0.78);
+    --text-h: #ededed;
+    --border: rgba(255, 255, 255, 0.18);
+    --border-strong: rgba(255, 255, 255, 0.45);
+
     position: relative;
     min-height: 100svh;
     width: 100%;
@@ -10,6 +18,7 @@
     overflow: hidden;
     isolation: isolate;
     background: var(--bg);
+    color: var(--text);
     border-bottom: 1px solid var(--border);
 }
 
@@ -34,9 +43,9 @@
     inset: 0;
     background: linear-gradient(
         180deg,
-        rgba(31, 33, 40, 0.35) 0%,
-        rgba(31, 33, 40, 0.1) 40%,
-        rgba(31, 33, 40, 0.8) 100%
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.1) 40%,
+        rgba(0, 0, 0, 0.85) 100%
     );
     z-index: -1;
     pointer-events: none;

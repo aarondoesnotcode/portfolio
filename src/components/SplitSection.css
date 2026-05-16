@@ -64,9 +64,14 @@
     display: block;
 }
 
-/* Fill the whole panel — used on the hero so the photo goes edge-to-edge. */
+/* Fill the whole panel — used when a panel should be edge-to-edge. */
 .split-section__img--cover {
     object-fit: cover;
+    object-position: center center;
+}
+
+/* Hero photo benefits from a higher focal point so the subject stays visible. */
+.split-section--hero .split-section__img--cover {
     object-position: center 22%;
 }
 

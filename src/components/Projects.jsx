@@ -90,9 +90,9 @@ function ProjectLinks({ linkedin, github, website }) {
           rel="noopener noreferrer"
           className={`projects-card__link projects-card__link--${classSuffix}`}
           aria-label={`${label} — opens in new tab`}
+          title={label}
         >
           {icon}
-          <span>{label}</span>
         </a>
       ))}
     </div>
@@ -137,8 +137,6 @@ function Projects() {
       id: 1,
       title: "Mortgage advisor",
       subtitle: "Google · Infosys AI Hackathon",
-      tools:
-        "Python, Streamlit, GCP, FastAPI, CrewAI, Pandas, Scikit-learn, NumPy, Joblib",
       summary:
         "Secured 3rd place out of 15+ teams by leading a team of 3 to build an AI-enabled mortgage advisor prototype. Deployed a credit risk assessment ML model leveraging real-world financial data to predict default likelihood. Automated underwriting workflows using AI agents, delivering preliminary insights within 5 minutes. Designed an interactive Streamlit interface to present real-time mortgage insights.",
       image: projectMortgageAdvisor,
@@ -154,7 +152,7 @@ function Projects() {
       title: "Logistic regression model",
       subtitle: "Side project",
       summary:
-        "A machine learning model, trained and tested on data to predict whether a user has heart disease or not.",
+        "A machine learning model, trained and tested on data to predict whether a user has heart disease or not. Created this project to grasp some insight into ML models - Logistic regression model - for my Infosys internship project.",
       image: projectLogisticRegression,
       imageAlt:
         "Terminal output with confusion matrix, classification report, accuracy, ROC-AUC, and F1 score",
@@ -215,8 +213,7 @@ function Projects() {
       summary:
         "An AI code review tool that analyses real GitHub commits, surfaces bugs, highlights security risks and suggests actionable fixes. To top it off, we integrated WhiteCircle as a guardrail layer to keep reviews compliant and safe.",
       image: projectCareCommit,
-      imageAlt:
-        "CareCommit landing page for AI-powered GitHub commit review",
+      imageAlt: "CareCommit landing page for AI-powered GitHub commit review",
       links: {
         linkedin:
           "https://www.linkedin.com/posts/aaron-parwany_last-week-i-jumped-back-into-the-hackathon-activity-7448278762527444992-Q9r_",

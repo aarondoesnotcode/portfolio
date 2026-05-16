@@ -42,14 +42,14 @@
     flex-direction: column;
     border: 1px solid var(--border);
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.015);
+    background: var(--surface);
     overflow: hidden;
     transition: border-color 0.3s, background 0.3s, transform 0.3s;
 }
 
 .projects-card:hover {
     border-color: var(--border-strong);
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--surface-hover);
     transform: translateY(-3px);
 }
 
@@ -58,7 +58,7 @@
     width: 100%;
     aspect-ratio: 16 / 9;
     overflow: hidden;
-    background: rgba(0, 0, 0, 0.2);
+    background: var(--media-bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -126,6 +126,7 @@
 }
 
 .projects-card__body {
+    flex: 1 1 auto;
     padding: 22px 22px 24px;
     display: flex;
     flex-direction: column;
@@ -178,34 +179,39 @@
 .projects-card__links {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 18px;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 20px;
 }
 
 .projects-card__link {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 7px 12px;
-    font-family: var(--sans);
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
     text-decoration: none;
     color: var(--text-h);
     border: 1px solid var(--border-strong);
-    border-radius: 6px;
-    background: rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    background: var(--chip-bg);
     transition:
         border-color 0.2s,
         background 0.2s,
-        color 0.2s;
+        color 0.2s,
+        transform 0.2s;
 }
 
 .projects-card__link:hover {
     border-color: var(--text-h);
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--chip-bg-hover);
+    transform: translateY(-1px);
+}
+
+.projects-card__link:focus-visible {
+    outline: 2px solid var(--border-strong);
+    outline-offset: 3px;
 }
 
 .projects-card__link--linkedin:hover {
@@ -260,7 +266,7 @@
     margin: 0;
     border: 1px solid var(--border);
     border-radius: 8px;
-    background: rgba(0, 0, 0, 0.2);
+    background: var(--media-bg);
     overflow: hidden;
     transition: border-color 0.3s, transform 0.3s;
 }

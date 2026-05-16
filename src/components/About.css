@@ -1,3 +1,14 @@
+/* About is its own route — fill the viewport like the hero and drop the
+   divider line at the bottom. */
+.split-section#about {
+    border-bottom: 0;
+    min-height: 100svh;
+}
+
+.split-section#about .split-section__media {
+    min-height: 100svh;
+}
+
 .about {
     width: 100%;
 }
