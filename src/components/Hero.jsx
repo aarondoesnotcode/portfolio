@@ -58,6 +58,28 @@ function Hero() {
             </svg>
           </a>
         </div>
+        <a
+          href="mailto:aaronparwany.p@gmail.com"
+          className="hero-contact"
+          aria-label="Email Aaron at aaronparwany.p@gmail.com"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <path d="m3 7 9 6 9-6" />
+          </svg>
+          <span>Contact me</span>
+        </a>
       </div>
     </SplitSection>
   );

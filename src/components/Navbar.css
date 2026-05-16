@@ -24,8 +24,11 @@
 }
 
 /* When the route below has its own dark backdrop (Sidequest), keep navbar
-   text and surface dark regardless of the user-selected theme. */
+   text and surface dark regardless of the user-selected theme. We also
+   override --bg locally so the inverted Sidequestmaxx chip (which uses
+   --bg for its text colour) stays readable in light theme on /sidequest. */
 .navbar--on-dark {
+    --bg: #0d0d0d;
     --text-h: #ffffff;
     --text: rgba(255, 255, 255, 0.78);
     --border: rgba(255, 255, 255, 0.2);
@@ -87,8 +90,7 @@
 }
 
 .navbar-sections .navbar-section-link:hover,
-.navbar-sections a:hover,
-.navbar .navbar-sidequest:hover {
+.navbar-sections a:hover {
     opacity: 1;
 }
 

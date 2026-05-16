@@ -53,6 +53,43 @@
     transform: translateY(-2px);
 }
 
+.hero-contact {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 4px;
+    padding: 11px 20px;
+    border: 1px solid var(--border-strong);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-h);
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition:
+        background 0.2s,
+        color 0.2s,
+        border-color 0.2s,
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+.hero-contact:hover {
+    background: var(--text-h);
+    color: var(--bg);
+    border-color: var(--text-h);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+}
+
+.hero-contact:focus-visible {
+    outline: 2px solid var(--border-strong);
+    outline-offset: 3px;
+}
+
 @media (max-width: 900px) {
     .hero-inner {
         max-width: none;
